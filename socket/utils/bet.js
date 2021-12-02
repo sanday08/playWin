@@ -9,6 +9,7 @@ async function placeBet(retailerId, game, position, betPoint, adminPer) {
 
     let user = await User.findById(retailerId);
     const superDistributer = await User.findById(user.referralId);
+    let bet = "";
     if (user.creditPoint >= betPoint) {
       let subAdminPer = await Subper.findById("60b74f37118f094eaa3709c2");
       subAdminPer = subAdminPer.percent;
